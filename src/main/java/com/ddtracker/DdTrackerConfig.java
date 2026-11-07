@@ -556,7 +556,7 @@ public interface DdTrackerConfig extends Config
 	)
 	default GearCheckMode gearCheck()
 	{
-		return GearCheckMode.ANY_WEAPON;
+		return GearCheckMode.CROSSBOW;
 	}
 
 	@ConfigItem(
