@@ -20,9 +20,22 @@ public interface DdTrackerConfig extends Config
 
 	enum GearCheckMode
 	{
-		OFF,
-		CROSSBOW,
-		ANY_WEAPON
+		OFF("Off"),
+		CROSSBOW("AFC weapons"),
+		ANY_WEAPON("Any weapon");
+
+		private final String label;
+
+		GearCheckMode(String label)
+		{
+			this.label = label;
+		}
+
+		@Override
+		public String toString()
+		{
+			return label;
+		}
 	}
 
 	@ConfigSection(
@@ -536,8 +549,8 @@ public interface DdTrackerConfig extends Config
 
 	@ConfigItem(
 		keyName = "gearCheck",
-		name = "Weapon check",
-		description = "Flag channel members with no weapon (ANY_WEAPON) or without a ranged/magic weapon like a bow, crossbow, or staff (CROSSBOW) equipped",
+		name = "AFC weapon check",
+		description = "Flag channel members with no weapon (Any weapon) or without an AFC-allowed weapon: bow, crossbow or staff (AFC weapons)",
 		position = 1,
 		section = gearSection
 	)
@@ -629,7 +642,7 @@ public interface DdTrackerConfig extends Config
 	@ConfigItem(
 		keyName = "gearWarnColor",
 		name = "Gear warning",
-		description = "Color of the 'No xbow' / 'Unarmed' label",
+		description = "Color of the 'No bow/staff' / 'Unarmed' label",
 		position = 6,
 		section = colorSection
 	)
