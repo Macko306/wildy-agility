@@ -21,7 +21,7 @@ public interface DdTrackerConfig extends Config
 	enum GearCheckMode
 	{
 		OFF("Off"),
-		CROSSBOW("AFC weapons"),
+		CROSSBOW("AFC weapons (bow, crossbow, staff)"),
 		ANY_WEAPON("Any weapon");
 
 		private final String label;
